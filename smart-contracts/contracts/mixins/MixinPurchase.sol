@@ -208,6 +208,9 @@ contract MixinPurchase is
       revert INSUFFICIENT_VALUE();
     }
 
+    // store the new price
+    _originalPrices[tokenId] = inMemoryKeyPrice;
+
     // refund gas (if applicable)
     _refundGas();
   }
